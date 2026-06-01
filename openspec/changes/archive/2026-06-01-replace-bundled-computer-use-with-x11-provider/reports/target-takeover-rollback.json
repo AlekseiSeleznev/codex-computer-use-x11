@@ -1,0 +1,18 @@
+{
+  "changed_files": [
+    "scripts/patches/computer-use.js",
+    "scripts/patch-linux-window-ui.js",
+    "scripts/patches/core/all-linux/webview/computer-use-ui/patch.js",
+    "/tmp/codex-x11-extracted-assets-JKWzKG/computer-use-settings-aHZZtKP_.js"
+  ],
+  "dry_run": false,
+  "live_assets": true,
+  "marker_version": "codex-computer-use-x11-provider-takeover:v1",
+  "mode": "takeover",
+  "operation": "uninstall",
+  "provider": "x11",
+  "restart_hint": "restart Codex Desktop fully so Electron/webview reloads patched live Computer Use settings assets.",
+  "state": "clean",
+  "target": "/home/as/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/AI_PROJECTS/codex-desktop-linux-full",
+  "target_commit": "09d27305e5122b584b4d9c5a30b4a9ab6bffc6f9"
+}

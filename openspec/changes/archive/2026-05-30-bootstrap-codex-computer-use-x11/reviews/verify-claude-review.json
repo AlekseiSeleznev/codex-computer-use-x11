@@ -1,0 +1,169 @@
+{
+  "budgetLimitUsd": null,
+  "change": "bootstrap-codex-computer-use-x11",
+  "command": {
+    "inputMode": "bundle",
+    "outputFormat": "json",
+    "permissionMode": "dontAsk",
+    "tools": "none"
+  },
+  "cost": {
+    "duration_ms": 64660,
+    "num_turns": 2,
+    "total_cost_usd": 1.049761
+  },
+  "effortConfigured": "high",
+  "effortEffective": "high",
+  "fallbackModel": "claude-sonnet-4-6",
+  "modelConfigured": "claude-opus-4-8",
+  "mustFix": [],
+  "omittedContext": [],
+  "questions": [
+    "This bundle-mode review cannot confirm the committed repository (commit caa88bc) actually contains Cargo.toml, src/lib.rs, src/main.rs, src/doctor.rs, src/x11_id.rs, tests/doctor_cli.rs, Makefile, README.md, and docs/integration-contract.md, nor that `cargo test`, `make fmt/check/test`, and `doctor --json` pass as recorded — the Evidence Log cites ephemeral /tmp/bootstrap-*.out files. Can the verifier confirm these against the working tree before archiving?"
+  ],
+  "reportPath": "openspec/changes/bootstrap-codex-computer-use-x11/reviews/verify-claude-review.json",
+  "reviewedAt": "2026-05-30T14:33:21Z",
+  "reviewedFiles": [
+    {
+      "bytes": 11565,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/proposal.md",
+      "reason": "artifact",
+      "sha256": "4f8a29f4f393014e4379d495e385fe249ae709d43115cbc057352b3d41bcc9a5"
+    },
+    {
+      "bytes": 9757,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/grill.md",
+      "reason": "artifact",
+      "sha256": "7a7f347af5bbf80988cb9521ce1218426725890beba00c820a52c78143ba4ec5"
+    },
+    {
+      "bytes": 14193,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/design.md",
+      "reason": "artifact",
+      "sha256": "d57b53fc995fe0947592a7969c7b2fedfd5a3c88a2cd98395adfc7151448f2f9"
+    },
+    {
+      "bytes": 10451,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/design-review.md",
+      "reason": "artifact",
+      "sha256": "a06766e93e6844e53481f0d7830bc349baa6e0c87eb17eb249f426fbefda2034"
+    },
+    {
+      "bytes": 9126,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/adr.md",
+      "reason": "artifact",
+      "sha256": "747ca6bdd00fe53ce0f66791e73e0ce27fff105ba3ef603641eded9fbce6ecfd"
+    },
+    {
+      "bytes": 19997,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/test-plan.md",
+      "reason": "artifact",
+      "sha256": "9c5a702e5fc7ae1277b4b1ff8a08ffe359aaba1c931551886f99cdadd2ef83da"
+    },
+    {
+      "bytes": 9955,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/tasks.md",
+      "reason": "artifact",
+      "sha256": "1fa0bad079f0ddb203c1ef48151686d222f654a1d496be372c855e6d483930be"
+    },
+    {
+      "bytes": 3240,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/specs/doctor-cli/spec.md",
+      "reason": "delta-spec",
+      "sha256": "a109c1eb1902c024e83387f6b5d7212f302feab2bef8aeb32e525c9707832597"
+    },
+    {
+      "bytes": 3271,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/specs/project-bootstrap/spec.md",
+      "reason": "delta-spec",
+      "sha256": "2890c419c77ea7cc2faad4d8009c10a645467b59e2bc1ea349020afd078d6c10"
+    },
+    {
+      "bytes": 4070,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/specs/x11-integration-contract/spec.md",
+      "reason": "delta-spec",
+      "sha256": "91737786de64712f751c13c1aa9cffcaa34e15a23e778b14aeac38d28cce2cf0"
+    },
+    {
+      "bytes": 4020,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/reviews/adr-claude-review.json",
+      "reason": "review-report",
+      "sha256": "7b854e8015b4aaa1123a169b57ca80034b1c3896bc1e5f2500391598079015e1"
+    },
+    {
+      "bytes": 6354,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/reviews/design-claude-review.json",
+      "reason": "review-report",
+      "sha256": "bde2c6139c806225e2badf1a38f1291c1ad47fd02ba793e0091c2abf992e57ae"
+    },
+    {
+      "bytes": 4896,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/reviews/design-review-claude-review.json",
+      "reason": "review-report",
+      "sha256": "d478a7eba701f879f6e283ac2a5ce1544dab6df581258714517bdc087d1f619f"
+    },
+    {
+      "bytes": 3571,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/reviews/proposal-claude-review.json",
+      "reason": "review-report",
+      "sha256": "37174dba661c55d1deaba4af28becfb29a129d945067850b54ab0c64fb080d62"
+    },
+    {
+      "bytes": 3748,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/reviews/specs-claude-review.json",
+      "reason": "review-report",
+      "sha256": "1c0950a41236a06f323c7a30f860df7db3b5af6df7b06106b2f19fe88403e60c"
+    },
+    {
+      "bytes": 6116,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/reviews/tasks-claude-review.json",
+      "reason": "review-report",
+      "sha256": "596a8f1b57682bd8e1ccfbb494d41658ba2d7c8d4ed6190430e0bcb1fc3e6a35"
+    },
+    {
+      "bytes": 5687,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/reviews/test-plan-claude-review.json",
+      "reason": "review-report",
+      "sha256": "6b13afb6b3fbd4e324da98b9c09cb63bc259d483ce5f2b4c196e268436f8a5a7"
+    },
+    {
+      "bytes": 7586,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/reviews/verify-claude-review.json",
+      "reason": "review-report",
+      "sha256": "ccaea745f9ec231cf40003bb31404a90d6abb8ee5c7b509d5ed1a4cfdd32131a"
+    },
+    {
+      "bytes": 6838,
+      "path": "CONSTITUTION.md",
+      "reason": "project-context",
+      "sha256": "7db0056f4164ead479480bf4b5f78a6c35f3679356323ac47567773449fdfcf4"
+    },
+    {
+      "bytes": 2409,
+      "path": "CONTEXT.md",
+      "reason": "project-context",
+      "sha256": "3735f0a1a5ece77c60c374213f852c0404783239263402a9bd059349bab8acf2"
+    },
+    {
+      "bytes": 7421,
+      "path": "ARCHITECTURE.md",
+      "reason": "project-context",
+      "sha256": "29620d4bc2539e2428b33aa43b11f265e19ee0b0d7c78ca8493f735d411d99df"
+    },
+    {
+      "bytes": 3405,
+      "path": "adr/README.md",
+      "reason": "project-context",
+      "sha256": "579a0c40c0d78ba3a3872dc312337e9459f631564efd9193611faba8a54a51ca"
+    }
+  ],
+  "schemaVersion": 1,
+  "shouldFix": [
+    "design.md and adr.md currently have uncommitted modifications (the no-live-x11-probes wording reconciliation in design Decision 4 and the verify-disposition note in adr.md). Checkpoint these so the verified/archived artifacts match the committed state.",
+    "The missing in-force ADR body files (adr/0001/0003/0005/0006/0007-*.md) referenced by ARCHITECTURE.md and adr/README.md are still absent, and the recommended `restore-durable-adr-bodies` follow-up exists only as prose in adr.md. Capture it as a tracked change/issue so it survives archival of this change."
+  ],
+  "stage": "verify",
+  "summary": "All verify-stage artifacts (proposal, specs, grill, design, design-review, adr, test-plan, tasks) are internally consistent and complete for this standalone bootstrap change. The doctor report shape, x11-ewmh backend identity, exact planned-capability assertion ([\"x11-ewmh-windowing\"]), stable bootstrap check names, the reconciled no-live-x11-probes detail string, root Rust package layout, Makefile wrappers, and CODEX_DESKTOP_LINUX_FULL_PATH framing all match across files. Tasks are all complete with a populated RED/GREEN/REFACTOR Evidence Log. No secret values are leaked (only the variable name and the constitution-permitted dev-machine default path appear). No model/effort policy issue is in scope. The prior verify review's design.md wording concern is resolved in the working tree. Two non-blocking items remain: design.md and adr.md edits are uncommitted, and the acknowledged missing in-force ADR body files still lack a tracked follow-up.",
+  "verdict": "pass",
+  "warnings": []
+}

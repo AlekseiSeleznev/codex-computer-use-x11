@@ -1,0 +1,48 @@
+{
+  "checks": [
+    {
+      "name": "fresh source install",
+      "status": "passed"
+    },
+    {
+      "name": "node --check scripts/patches/computer-use.js in fresh target",
+      "status": "passed"
+    },
+    {
+      "name": "node --test scripts/patch-linux-window-ui.test.js X11/provider subset in fresh target",
+      "status": "passed",
+      "tests": 163
+    },
+    {
+      "name": "fresh live asset patch using backed-up unpatched computer-use-settings asset",
+      "status": "passed"
+    },
+    {
+      "name": "fresh rollback restores source and live asset backups",
+      "status": "passed"
+    },
+    {
+      "name": "current repo python/cargo provider_takeover tests",
+      "status": "passed",
+      "tests": 4
+    }
+  ],
+  "fix_applied": "Included target patch-linux-window-ui.test.js in overlay so descriptor tests match runtime descriptors on fresh target checkout.",
+  "fresh_target_base": "/home/as/Документы/AI_PROJECTS/codex-desktop-linux-full origin/main",
+  "fresh_target_commit": "1a6f343ee7ce597019a4c573259c2a9838376874",
+  "installer_command": "scripts/install-codex-source-overlay.sh --target <fresh-worktree> --provider x11 --mode takeover",
+  "live_asset_expectations": {
+    "direct_custom_marketplace_lookup_present": true,
+    "takeover_marker_present": true,
+    "unavailable_placeholder_not_inserted_into_items": true,
+    "unsafe_installed_plugins_x_helper_absent": true
+  },
+  "operation": "fresh-rollout-check",
+  "remaining_manual_step": "On a real fresh machine, run the installer with --patch-live-assets against the installed /opt/codex-desktop/content/webview/assets directory and restart Codex Desktop fully.",
+  "source_changed_files": [
+    "scripts/patches/computer-use.js",
+    "scripts/patch-linux-window-ui.js",
+    "scripts/patch-linux-window-ui.test.js",
+    "scripts/patches/core/all-linux/webview/computer-use-ui/patch.js"
+  ]
+}

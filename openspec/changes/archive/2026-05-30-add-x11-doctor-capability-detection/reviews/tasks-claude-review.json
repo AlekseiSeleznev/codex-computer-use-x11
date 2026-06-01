@@ -1,0 +1,126 @@
+{
+  "budgetLimitUsd": null,
+  "change": "add-x11-doctor-capability-detection",
+  "command": {
+    "inputMode": "bundle",
+    "outputFormat": "json",
+    "permissionMode": "dontAsk",
+    "tools": "none"
+  },
+  "cost": {
+    "duration_ms": 105465,
+    "num_turns": 2,
+    "total_cost_usd": 0.5001639
+  },
+  "effortConfigured": "medium",
+  "effortEffective": "medium",
+  "fallbackModel": "claude-sonnet-4-6",
+  "modelConfigured": "claude-sonnet-4-6",
+  "mustFix": [],
+  "omittedContext": [],
+  "questions": [],
+  "reportPath": "openspec/changes/add-x11-doctor-capability-detection/reviews/tasks-claude-review.json",
+  "reviewedAt": "2026-05-30T18:21:21Z",
+  "reviewedFiles": [
+    {
+      "bytes": 13895,
+      "path": "openspec/changes/add-x11-doctor-capability-detection/proposal.md",
+      "reason": "dependency",
+      "sha256": "0e16cea617f1738530061de57c1e813bb70db8984cf54a20026718d9490ac321"
+    },
+    {
+      "bytes": 7678,
+      "path": "openspec/changes/add-x11-doctor-capability-detection/grill.md",
+      "reason": "dependency",
+      "sha256": "5b50c3733de94ea54350048998efde2607433452b35b38f0396130ce59a79926"
+    },
+    {
+      "bytes": 21534,
+      "path": "openspec/changes/add-x11-doctor-capability-detection/design.md",
+      "reason": "dependency",
+      "sha256": "a39a36f8bbe35a667657ac9bf7105a7de71f799375738e84a7aef98bebc578f9"
+    },
+    {
+      "bytes": 13914,
+      "path": "openspec/changes/add-x11-doctor-capability-detection/design-review.md",
+      "reason": "dependency",
+      "sha256": "7b24aa407aa23c86c50d7f82d96432e221ec3419298dcb3f7231421044eaa103"
+    },
+    {
+      "bytes": 10407,
+      "path": "openspec/changes/add-x11-doctor-capability-detection/adr.md",
+      "reason": "dependency",
+      "sha256": "48b78e82be6d0b528435e74762899bce4c5d9bd55fc22c81dcfb502ac3572b00"
+    },
+    {
+      "bytes": 29495,
+      "path": "openspec/changes/add-x11-doctor-capability-detection/test-plan.md",
+      "reason": "dependency",
+      "sha256": "41c7fdc005906a7ac715a055893211d81628edd9633cc5a6459dc08bfba3f7f1"
+    },
+    {
+      "bytes": 14110,
+      "path": "openspec/changes/add-x11-doctor-capability-detection/tasks.md",
+      "reason": "artifact",
+      "sha256": "3872b7ba5dec85f5914550f2ccfa967d7fa3bf9d62dd9ae1e63eca3a506a5e4c"
+    },
+    {
+      "bytes": 18997,
+      "path": "openspec/changes/add-x11-doctor-capability-detection/specs/doctor-cli/spec.md",
+      "reason": "delta-spec",
+      "sha256": "7076af6361be64b44c3ed2a3643d19234b878acaa2122d6c7348f569564a8721"
+    },
+    {
+      "bytes": 3371,
+      "path": "openspec/specs/doctor-cli/spec.md",
+      "reason": "canonical-spec",
+      "sha256": "61fbba6ef63d458cbd12566720ebeeafccd9432d5f773bc5798a7c787f93c6e2"
+    },
+    {
+      "bytes": 8914,
+      "path": "openspec/changes/add-x11-doctor-capability-detection/specs/x11-integration-contract/spec.md",
+      "reason": "delta-spec",
+      "sha256": "c75b613d79217c334ed00bf0d4962a760af0b68b11815ca5ad9e933a0a6daf86"
+    },
+    {
+      "bytes": 4215,
+      "path": "openspec/specs/x11-integration-contract/spec.md",
+      "reason": "canonical-spec",
+      "sha256": "2a02b7447836fb65d7e3de99162fc8c61581eb4b9197e81b62fddb1286d02174"
+    },
+    {
+      "bytes": 6838,
+      "path": "CONSTITUTION.md",
+      "reason": "project-context",
+      "sha256": "7db0056f4164ead479480bf4b5f78a6c35f3679356323ac47567773449fdfcf4"
+    },
+    {
+      "bytes": 2409,
+      "path": "CONTEXT.md",
+      "reason": "project-context",
+      "sha256": "3735f0a1a5ece77c60c374213f852c0404783239263402a9bd059349bab8acf2"
+    },
+    {
+      "bytes": 7421,
+      "path": "ARCHITECTURE.md",
+      "reason": "project-context",
+      "sha256": "29620d4bc2539e2428b33aa43b11f265e19ee0b0d7c78ca8493f735d411d99df"
+    },
+    {
+      "bytes": 3405,
+      "path": "adr/README.md",
+      "reason": "project-context",
+      "sha256": "579a0c40c0d78ba3a3872dc312337e9459f631564efd9193611faba8a54a51ca"
+    }
+  ],
+  "schemaVersion": 1,
+  "shouldFix": [
+    "Task 1.1 references `openspec status --change add-x11-doctor-capability-detection --json` as a precondition check, but this command form is not confirmed in the test-plan Required Checks section (only `openspec validate` is confirmed as the canonical CLI command). The fallback instruction mitigates this, but the unconfirmed status-command form should either be verified against the installed OpenSpec CLI version before apply or removed in favor of direct change-directory inspection plus the confirmed validate command.",
+    "Tasks section 4 has no explicit task confirming that `portals.screencast` and `portals.input_capture` shape-presence tests (from Slice 6 `portal_report_marks_screencast_input_capture_report_only`) also assert that those facts do not alter `readiness.ok` or add a blocker — Task 4.4 names the test but does not spell out the non-gating assertion in the task body. This is fully covered by the test-plan slice but recording the assertion explicitly in the task would prevent a silent omission during apply.",
+    "Task 7.6 records the canonical `Purpose: TBD` debt for both specs files as an archive/spec-sync follow-up but does not specify an owner, trigger condition, or the concrete change path under which the cleanup would be filed. Adding a brief note (e.g., 'file as a dedicated spec-maintenance change after archive of this change') would prevent the follow-up from becoming indefinitely open backlog."
+  ],
+  "stage": "tasks",
+  "summary": "The tasks artifact is consistent with all prior planning artifacts (proposal, specs, design, design-review, adr, test-plan). All 11 TDD slices are covered and correctly ordered across sections 2–6. Every carry-forward obligation from design-review.md and test-plan.md is either addressed by a precondition task (section 1) or an implementation task. Secret-leakage risk is explicitly mitigated (Task 1.7 privacy carve-out, Task 7.3 git-status guard). The ADR reopen trigger is included in Task 5.2. No upstream-required targeted-input field is introduced anywhere in the task set. The canonical EWMH fixture format precondition (Task 1.4) correctly blocks Slice 4 GREEN rather than deferring to live smoke. No missing requirements, no unsupported assumptions, and no model/effort policy issues were found.",
+  "verdict": "pass",
+  "warnings": []
+}

@@ -1,0 +1,11 @@
+{
+  "operation": "fix-live-asset-unavailable-item",
+  "asset": "/opt/codex-desktop/content/webview/assets/computer-use-settings-aHZZtKP_.js",
+  "backup": "/home/as/Документы/AI_PROJECTS/codex-desktop-linux-full/.codex-computer-use-x11-overlay/provider-takeover/backups/20260601T084847Z/live-assets/computer-use-settings-aHZZtKP_.js",
+  "changed": true,
+  "before_sha256": "8e2abcdf0dc61699293a37a3ff271c99b6323a4cda32754a6a2a3bb6abbba530",
+  "after_sha256": "ff07f0dcae12a86f9e45388b059255ca9d6a4f717355815c66edc839c3f941bd",
+  "marker_present": true,
+  "unsafe_unavailable_in_items_present": false,
+  "unavailable_uses_unavailable_items": true
+}
