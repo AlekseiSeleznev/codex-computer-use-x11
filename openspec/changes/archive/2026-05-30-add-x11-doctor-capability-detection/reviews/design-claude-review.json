@@ -1,0 +1,111 @@
+{
+  "budgetLimitUsd": null,
+  "change": "add-x11-doctor-capability-detection",
+  "command": {
+    "inputMode": "bundle",
+    "outputFormat": "json",
+    "permissionMode": "dontAsk",
+    "tools": "none"
+  },
+  "cost": {
+    "duration_ms": 121774,
+    "num_turns": 2,
+    "total_cost_usd": 0.4055196
+  },
+  "effortConfigured": "high",
+  "effortEffective": "high",
+  "fallbackModel": "claude-sonnet-4-6",
+  "modelConfigured": "claude-sonnet-4-6",
+  "mustFix": [],
+  "omittedContext": [
+    {
+      "path": "/home/as/ai-projects/codex-computer-use-x11/docs/lifecycle.md",
+      "reason": "missing"
+    },
+    {
+      "path": "/home/as/ai-projects/codex-computer-use-x11/docs/update-safety.md",
+      "reason": "missing"
+    }
+  ],
+  "questions": [],
+  "reportPath": "openspec/changes/add-x11-doctor-capability-detection/reviews/design-claude-review.json",
+  "reviewedAt": "2026-05-30T15:56:16Z",
+  "reviewedFiles": [
+    {
+      "bytes": 13895,
+      "path": "openspec/changes/add-x11-doctor-capability-detection/proposal.md",
+      "reason": "dependency",
+      "sha256": "0e16cea617f1738530061de57c1e813bb70db8984cf54a20026718d9490ac321"
+    },
+    {
+      "bytes": 7678,
+      "path": "openspec/changes/add-x11-doctor-capability-detection/grill.md",
+      "reason": "dependency",
+      "sha256": "5b50c3733de94ea54350048998efde2607433452b35b38f0396130ce59a79926"
+    },
+    {
+      "bytes": 21534,
+      "path": "openspec/changes/add-x11-doctor-capability-detection/design.md",
+      "reason": "artifact",
+      "sha256": "a39a36f8bbe35a667657ac9bf7105a7de71f799375738e84a7aef98bebc578f9"
+    },
+    {
+      "bytes": 18997,
+      "path": "openspec/changes/add-x11-doctor-capability-detection/specs/doctor-cli/spec.md",
+      "reason": "delta-spec",
+      "sha256": "7076af6361be64b44c3ed2a3643d19234b878acaa2122d6c7348f569564a8721"
+    },
+    {
+      "bytes": 3371,
+      "path": "openspec/specs/doctor-cli/spec.md",
+      "reason": "canonical-spec",
+      "sha256": "61fbba6ef63d458cbd12566720ebeeafccd9432d5f773bc5798a7c787f93c6e2"
+    },
+    {
+      "bytes": 8914,
+      "path": "openspec/changes/add-x11-doctor-capability-detection/specs/x11-integration-contract/spec.md",
+      "reason": "delta-spec",
+      "sha256": "c75b613d79217c334ed00bf0d4962a760af0b68b11815ca5ad9e933a0a6daf86"
+    },
+    {
+      "bytes": 4215,
+      "path": "openspec/specs/x11-integration-contract/spec.md",
+      "reason": "canonical-spec",
+      "sha256": "2a02b7447836fb65d7e3de99162fc8c61581eb4b9197e81b62fddb1286d02174"
+    },
+    {
+      "bytes": 6838,
+      "path": "CONSTITUTION.md",
+      "reason": "project-context",
+      "sha256": "7db0056f4164ead479480bf4b5f78a6c35f3679356323ac47567773449fdfcf4"
+    },
+    {
+      "bytes": 2409,
+      "path": "CONTEXT.md",
+      "reason": "project-context",
+      "sha256": "3735f0a1a5ece77c60c374213f852c0404783239263402a9bd059349bab8acf2"
+    },
+    {
+      "bytes": 7421,
+      "path": "ARCHITECTURE.md",
+      "reason": "project-context",
+      "sha256": "29620d4bc2539e2428b33aa43b11f265e19ee0b0d7c78ca8493f735d411d99df"
+    },
+    {
+      "bytes": 3405,
+      "path": "adr/README.md",
+      "reason": "project-context",
+      "sha256": "579a0c40c0d78ba3a3872dc312337e9459f631564efd9193611faba8a54a51ca"
+    }
+  ],
+  "schemaVersion": 1,
+  "shouldFix": [
+    "Decision 9 references 'the selected read-only EWMH/root probe' without committing to a specific command. The design offers wmctrl -m or xprop -root _NET_SUPPORTING_WM_CHECK as alternatives but leaves the choice open. Test-plan should pin the exact command and define its success/failure criteria deterministically so can_query_windows has unambiguous test coverage.",
+    "Decision 1 states that new machine-readable details do not overload checks[*].detail prose, but the design does not enumerate what new check entries, if any, are added to the checks[] array alongside the new fact sections. The spec minimum is 'at least one self-check or doctor-internal check entry,' which the existing bootstrap already satisfies. Test-plan should explicitly enumerate the expected checks[] entries in the expanded report to prevent silent drift.",
+    "Decision 5 defines SourceOverlayFacts with notes: Vec<String> and screenshot_provider_mapping: Vec<String>, and Decision 11 mentions that the later tasks.md must carry forward acceptance criteria, but neither decision specifies whether those Vec<String> fields are static compile-time strings reflecting spec acceptance records or runtime-derived values. This distinction affects what assertions are meaningful in tests. The test-plan should clarify which fields are static-populated and which are runtime-derived before writing fixture tests for source_overlay."
+  ],
+  "stage": "design",
+  "summary": "The design artifact is internally consistent and aligns well with the proposal, specs, grill resolutions, and project constraints. All proposal-stage obligations and specs-stage obligations are addressed. Secret safety is handled explicitly. No upstream-required fields are invented. The additive report model, blocker-based readiness, strict portal parsing, ydotool socket candidate ordering, and source-overlay acceptance plan are all coherently specified. Three minor implementation-detail gaps are noted as shouldFix items appropriate for clarification at test-plan/tasks stage rather than blocking this stage.",
+  "verdict": "pass",
+  "warnings": []
+}

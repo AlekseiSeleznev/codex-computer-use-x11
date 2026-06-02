@@ -1,0 +1,43 @@
+{
+  "changed_files": [
+    "/opt/codex-desktop/content/webview/assets/computer-use-settings-aHZZtKP_.js"
+  ],
+  "dry_run": false,
+  "live_asset_backups": [
+    {
+      "asset": "/opt/codex-desktop/content/webview/assets/computer-use-settings-aHZZtKP_.js",
+      "backup": ".codex-computer-use-x11-overlay/provider-takeover/backups/20260601T081544Z/live-assets/computer-use-settings-aHZZtKP_.js",
+      "sha256": "a5d419cebb38f0c30f3bb84635e3305540365ce68701eb2322590b7a4897d1f3",
+      "size": 34613
+    }
+  ],
+  "live_assets": true,
+  "marker_version": "codex-computer-use-x11-provider-takeover:v1",
+  "mode": "takeover",
+  "operation": "install",
+  "provider": "x11",
+  "restart_hint": "restart Codex Desktop fully so Electron/webview reloads patched live Computer Use settings assets.",
+  "source_backups": [
+    {
+      "backup": ".codex-computer-use-x11-overlay/provider-takeover/backups/20260601T081544Z/source/scripts/patches/computer-use.js",
+      "rel": "scripts/patches/computer-use.js",
+      "sha256": "6d9a0e824b77c45e95c03f11ea06d4af2afc0696547ba1dc613e74c561a5d6cc",
+      "source": "git-parent"
+    },
+    {
+      "backup": ".codex-computer-use-x11-overlay/provider-takeover/backups/20260601T081544Z/source/scripts/patch-linux-window-ui.js",
+      "rel": "scripts/patch-linux-window-ui.js",
+      "sha256": "a1826dd83ef97852b823c69363ccff59f817be3c6ff396b93ca3c6cfcb2a5a8b",
+      "source": "git-parent"
+    },
+    {
+      "backup": ".codex-computer-use-x11-overlay/provider-takeover/backups/20260601T081544Z/source/scripts/patches/core/all-linux/webview/computer-use-ui/patch.js",
+      "rel": "scripts/patches/core/all-linux/webview/computer-use-ui/patch.js",
+      "sha256": "4b06b0b81bc826cd8cbc26c462368c6c35f28a9aaf4ac2e8764259c31f5c5dd5",
+      "source": "git-parent"
+    }
+  ],
+  "state": "applied",
+  "target": "/home/as/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/AI_PROJECTS/codex-desktop-linux-full",
+  "target_commit": "09d27305e5122b584b4d9c5a30b4a9ab6bffc6f9"
+}

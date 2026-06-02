@@ -1,0 +1,104 @@
+{
+  "budgetLimitUsd": null,
+  "change": "bootstrap-codex-computer-use-x11",
+  "command": {
+    "inputMode": "bundle",
+    "outputFormat": "json",
+    "permissionMode": "dontAsk",
+    "tools": "none"
+  },
+  "cost": {
+    "duration_ms": 59504,
+    "num_turns": 2,
+    "total_cost_usd": 0.5652944999999999
+  },
+  "effortConfigured": "high",
+  "effortEffective": "high",
+  "fallbackModel": "claude-sonnet-4-6",
+  "modelConfigured": "claude-opus-4-8",
+  "mustFix": [],
+  "omittedContext": [],
+  "questions": [
+    "Should the design state whether the doctor report's compact JSON includes the planned capability label exactly as 'x11-ewmh-windowing', or leave that name fully design-owned for apply, since the spec only requires planned to be non-empty?",
+    "Will test-plan.md/tasks.md treat the manual README-MSRV and integration-contract verification items with the same gate weight as cargo/make checks, as the design-review requires, given those gates are still pending?"
+  ],
+  "reportPath": "openspec/changes/bootstrap-codex-computer-use-x11/reviews/design-review-claude-review.json",
+  "reviewedAt": "2026-05-30T13:39:49Z",
+  "reviewedFiles": [
+    {
+      "bytes": 11565,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/proposal.md",
+      "reason": "dependency",
+      "sha256": "4f8a29f4f393014e4379d495e385fe249ae709d43115cbc057352b3d41bcc9a5"
+    },
+    {
+      "bytes": 9757,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/grill.md",
+      "reason": "dependency",
+      "sha256": "7a7f347af5bbf80988cb9521ce1218426725890beba00c820a52c78143ba4ec5"
+    },
+    {
+      "bytes": 14174,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/design.md",
+      "reason": "dependency",
+      "sha256": "e9172befd202842f383160bdd41e069ca69b849d72fa5140681b2659468e52b7"
+    },
+    {
+      "bytes": 9370,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/design-review.md",
+      "reason": "artifact",
+      "sha256": "168bed174a04a9641bcda8fb0755a45bb5d8c969a658de2d35dbdf8dd0ff6a11"
+    },
+    {
+      "bytes": 3240,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/specs/doctor-cli/spec.md",
+      "reason": "delta-spec",
+      "sha256": "a109c1eb1902c024e83387f6b5d7212f302feab2bef8aeb32e525c9707832597"
+    },
+    {
+      "bytes": 3271,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/specs/project-bootstrap/spec.md",
+      "reason": "delta-spec",
+      "sha256": "2890c419c77ea7cc2faad4d8009c10a645467b59e2bc1ea349020afd078d6c10"
+    },
+    {
+      "bytes": 4070,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/specs/x11-integration-contract/spec.md",
+      "reason": "delta-spec",
+      "sha256": "91737786de64712f751c13c1aa9cffcaa34e15a23e778b14aeac38d28cce2cf0"
+    },
+    {
+      "bytes": 6838,
+      "path": "CONSTITUTION.md",
+      "reason": "project-context",
+      "sha256": "7db0056f4164ead479480bf4b5f78a6c35f3679356323ac47567773449fdfcf4"
+    },
+    {
+      "bytes": 2409,
+      "path": "CONTEXT.md",
+      "reason": "project-context",
+      "sha256": "3735f0a1a5ece77c60c374213f852c0404783239263402a9bd059349bab8acf2"
+    },
+    {
+      "bytes": 7421,
+      "path": "ARCHITECTURE.md",
+      "reason": "project-context",
+      "sha256": "29620d4bc2539e2428b33aa43b11f265e19ee0b0d7c78ca8493f735d411d99df"
+    },
+    {
+      "bytes": 3405,
+      "path": "adr/README.md",
+      "reason": "project-context",
+      "sha256": "579a0c40c0d78ba3a3872dc312337e9459f631564efd9193611faba8a54a51ca"
+    }
+  ],
+  "schemaVersion": 1,
+  "shouldFix": [
+    "Bootstrap doctor emits backend=\"x11-ewmh\" with readiness.ok=true while no backend is implemented; add an explicit detail/doc note so consumers cannot misread it as 'x11-ewmh backend ready' (currently only inferable from capabilities.planned and the no-live-x11-probes check).",
+    "Align the no-live-x11-probes check name with its detail string ('no external command execution' is broader than 'no live X11 probes') so the stage-01 apply wording is unambiguous."
+  ],
+  "stage": "design-review",
+  "summary": "The design and design-review artifacts are internally consistent and fully aligned with the proposal, all three capability specs, the grill resolutions, and project context (CONSTITUTION/CONTEXT/ARCHITECTURE/ADR). The doctor report shape, x11-ewmh backend identity, root Rust 2021 package, Makefile wrappers, CODEX_DESKTOP_LINUX_FULL_PATH framing, registry fallback order, and sidecar/WindowObservationMeta boundary all match across files. No secret leakage (only variable names and a documented dev-machine default path appear). No model/effort policy issue is in scope for this stage. TDD discipline is respected: error-path RED evidence and stable bootstrap check names were correctly added. Two minor, non-blocking clarity concerns noted. Stage may proceed to ADR.",
+  "verdict": "pass",
+  "warnings": []
+}

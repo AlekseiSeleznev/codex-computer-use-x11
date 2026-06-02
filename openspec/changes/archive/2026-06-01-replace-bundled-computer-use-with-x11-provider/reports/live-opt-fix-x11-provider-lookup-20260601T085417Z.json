@@ -1,0 +1,12 @@
+{
+  "operation": "fix-live-asset-x11-provider-lookup",
+  "asset": "/opt/codex-desktop/content/webview/assets/computer-use-settings-aHZZtKP_.js",
+  "backup": "/home/as/Документы/AI_PROJECTS/codex-desktop-linux-full/.codex-computer-use-x11-overlay/provider-takeover/backups/20260601T085417Z/live-assets/computer-use-settings-aHZZtKP_.js",
+  "changed": true,
+  "before_sha256": "ff07f0dcae12a86f9e45388b059255ca9d6a4f717355815c66edc839c3f941bd",
+  "after_sha256": "d858cc6acefdf064ce2a9a997f18bd63bc42a2f88394bb35a785f0d26b48724b",
+  "marker_present": true,
+  "marketplace_filtered_lookup_present": false,
+  "direct_custom_marketplace_lookup_present": true,
+  "unavailable_uses_unavailable_items": true
+}

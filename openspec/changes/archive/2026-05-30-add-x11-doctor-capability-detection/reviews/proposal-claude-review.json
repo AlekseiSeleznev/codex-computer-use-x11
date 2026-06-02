@@ -1,0 +1,67 @@
+{
+  "budgetLimitUsd": null,
+  "change": "add-x11-doctor-capability-detection",
+  "command": {
+    "inputMode": "bundle",
+    "outputFormat": "json",
+    "permissionMode": "dontAsk",
+    "tools": "none"
+  },
+  "cost": {
+    "duration_ms": 26061,
+    "num_turns": 2,
+    "total_cost_usd": 0.12867815
+  },
+  "effortConfigured": "low",
+  "effortEffective": "low",
+  "fallbackModel": "claude-sonnet-4-6",
+  "modelConfigured": "claude-sonnet-4-6",
+  "mustFix": [],
+  "omittedContext": [],
+  "questions": [],
+  "reportPath": "openspec/changes/add-x11-doctor-capability-detection/reviews/proposal-claude-review.json",
+  "reviewedAt": "2026-05-30T15:14:11Z",
+  "reviewedFiles": [
+    {
+      "bytes": 12757,
+      "path": "openspec/changes/add-x11-doctor-capability-detection/proposal.md",
+      "reason": "artifact",
+      "sha256": "e3a1d87a09bcebcfde300ff6f07c5e14edc9a306fdd8971cd49f0dc2c41d8d0e"
+    },
+    {
+      "bytes": 6838,
+      "path": "CONSTITUTION.md",
+      "reason": "project-context",
+      "sha256": "7db0056f4164ead479480bf4b5f78a6c35f3679356323ac47567773449fdfcf4"
+    },
+    {
+      "bytes": 2409,
+      "path": "CONTEXT.md",
+      "reason": "project-context",
+      "sha256": "3735f0a1a5ece77c60c374213f852c0404783239263402a9bd059349bab8acf2"
+    },
+    {
+      "bytes": 7421,
+      "path": "ARCHITECTURE.md",
+      "reason": "project-context",
+      "sha256": "29620d4bc2539e2428b33aa43b11f265e19ee0b0d7c78ca8493f735d411d99df"
+    },
+    {
+      "bytes": 3405,
+      "path": "adr/README.md",
+      "reason": "project-context",
+      "sha256": "579a0c40c0d78ba3a3872dc312337e9459f631564efd9193611faba8a54a51ca"
+    }
+  ],
+  "schemaVersion": 1,
+  "shouldFix": [
+    "Exit-code contract is underspecified: the proposal says non-zero exits are reserved for 'unsupported CLI usage or internal serialization/runtime failures' but lists no exit codes or failure categories. The specs artifact will need to enumerate these; adding at least a placeholder enumeration to the proposal now avoids a grill-stage round-trip.",
+    "ydotool socket probe ordering is ambiguous: the proposal lists four candidates but does not say whether the probe stops at the first connectable socket (ordered) or reports all candidates. The distinction affects how recommended_next_step text is generated and should be resolved before specs.",
+    "The forward gate for the bootstrap compatibility table is self-referential ('the specs gate MUST re-check this') with no fallback if the specs author omits it. Add an explicit checklist item to the proposal's acceptance checklist that names the reviewer or gate responsible for verifying the table is present, so the obligation survives handoff.",
+    "The derived targeted-input consumer obligation is stated informally ('downstream consumers should derive…from four fields plus text') without a specs artifact backing that derivation. Either move this guidance entirely to a non-normative note or add a task to the forward gate to define the derivation contract explicitly in the specs delta."
+  ],
+  "stage": "proposal",
+  "summary": "The proposal is well-grounded: real local probes back the environment facts, upstream vocabulary is verified against the actual target checkout, backward-compatibility obligations are explicit, secret handling is clean, and the sootie license risk is correctly flagged and deferred. Four issues prevent a clean pass but none are blockers at proposal stage.",
+  "verdict": "warn",
+  "warnings": []
+}
