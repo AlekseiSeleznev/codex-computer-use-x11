@@ -1,0 +1,79 @@
+{
+  "currentRepo": {
+    "changes": [
+      "scripts/codex-source-overlay.py dry-run live-asset patcher fix",
+      "tests/source_overlay_scripts.rs regression test for fresh target dry-run live assets"
+    ],
+    "path": "/home/as/ai-projects/codex-computer-use-x11"
+  },
+  "dryRunBugfixEvidence": {
+    "fix": "During dry-run live-asset simulation, codex-source-overlay.py now loads the overlay patcher from this repo instead of the still-unpatched target patcher.",
+    "green": [
+      "cargo test --test source_overlay_scripts provider_takeover_dry_run_live_assets_uses_overlay_patcher -- --nocapture passed",
+      "cargo test --test source_overlay_scripts -- --nocapture passed 12/12"
+    ],
+    "red": "cargo test --test source_overlay_scripts provider_takeover_dry_run_live_assets_uses_overlay_patcher -- --nocapture failed because fresh target did not export applyX11ComputerUseSettingsRowPatch."
+  },
+  "freshBaseline": {
+    "electronVersion": "42.1.0",
+    "installedPackageBeforeTakeover": "codex-desktop 2026.06.01.095521",
+    "linuxFeaturesEnabled": [
+      "agent-workspace",
+      "appshots",
+      "codex-wrapper-updater",
+      "conversation-mode",
+      "copilot-reasoning-effort",
+      "open-target-discovery",
+      "read-aloud",
+      "read-aloud-mcp",
+      "remote-control-ui",
+      "remote-mobile-control",
+      "thorium-chrome-plugin",
+      "zed-opener"
+    ],
+    "removedPackage": "codex-desktop 2026.05.29.231122+b26865ed",
+    "sourceCommit": "b771d3d89d8a002d559a443a09a1aa25a4e6702a",
+    "upstreamAppVersion": "26.527.31326",
+    "userStopGate": "User confirmed the fresh Codex Desktop baseline works."
+  },
+  "noSecrets": true,
+  "purpose": "Fresh Codex Desktop Linux baseline reinstall followed by codex-computer-use-x11 provider takeover installation evidence.",
+  "recordedAt": "2026-06-01T10:22:56Z",
+  "schemaVersion": 1,
+  "takeoverInstall": {
+    "dryRunReport": "/home/as/Документы/AI_PROJECTS/codex-desktop-linux/.codex-computer-use-x11-overlay/provider-takeover/reports/install-x11-provider-takeover-20260601T102229Z.json",
+    "installReport": "/home/as/Документы/AI_PROJECTS/codex-desktop-linux/.codex-computer-use-x11-overlay/provider-takeover/reports/install-x11-provider-takeover-20260601T102256Z.json",
+    "installedAsset": "/opt/codex-desktop/content/webview/assets/computer-use-settings-aHZZtKP_.js",
+    "installedAssetContains": [
+      "codex-computer-use-x11-provider-takeover:v1",
+      "X11 Computer Use"
+    ],
+    "installedPackageAfterTakeover": "codex-desktop 2026.06.01.102530",
+    "liveAssetPatchStatus": "skipped:not-writable; rebuilt/reinstalled patched target instead",
+    "manifestLiveAssetBackups": 0,
+    "manifestSourceBackups": 4,
+    "pluginStatus": "installed",
+    "sourceOverlayState": "applied",
+    "statusReport": "/home/as/Документы/AI_PROJECTS/codex-desktop-linux/.codex-computer-use-x11-overlay/provider-takeover/reports/status-after-install.json",
+    "userStopGate": "User confirmed X11 Computer Use is installed and visible in the UI."
+  },
+  "targetRepo": {
+    "dirtyScope": [
+      "scripts/patches/computer-use.js",
+      "scripts/patch-linux-window-ui.js",
+      "scripts/patch-linux-window-ui.test.js",
+      "scripts/patches/core/all-linux/webview/computer-use-ui/patch.js",
+      "ignored .codex-computer-use-x11-overlay/",
+      "ignored linux-features/features.json"
+    ],
+    "head": "b771d3d89d8a002d559a443a09a1aa25a4e6702a",
+    "originMain": "b771d3d89d8a002d559a443a09a1aa25a4e6702a",
+    "path": "/home/as/Документы/AI_PROJECTS/codex-desktop-linux",
+    "remote": "https://github.com/ilysenko/codex-desktop-linux.git"
+  },
+  "verification": {
+    "focusedTargetX11Tests": "node --test --test-name-pattern='X11|takeover|provider' scripts/patch-linux-window-ui.test.js passed 10/10 in the target checkout.",
+    "fullTargetPatchTest": "node --test scripts/patch-linux-window-ui.test.js failed on unrelated stale Chrome/descriptor assertions after overlay; X11/provider focused tests passed.",
+    "installedRuntime": "Codex Desktop requires full quit/relaunch after rebuild; user performed manual UI verification and confirmed the X11 row appears."
+  }
+}

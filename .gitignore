@@ -1,0 +1,15 @@
+.~lock.*#
+.worktrees/
+/target/
+
+# Local secrets and environment overrides
+.secrets.local.env
+.secrets.*.local.env
+.env.local
+.env.*.local
+
+# Codex/OpenSpec local session state
+.codex/session/
+
+# Generated/local backup artifacts
+*.bak.*
