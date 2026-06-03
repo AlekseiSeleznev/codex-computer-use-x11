@@ -1,10 +1,6 @@
-# X11/EWMH Computer Use Linux Feature scaffold
+# X11/EWMH Computer Use Linux Feature
 
-This is a copyable scaffold for a later `codex-desktop-linux` upstream PR. It is inert in the `codex-computer-use-x11` source repository until copied to:
-
-```text
-linux-features/x11-ewmh-computer-use/
-```
+This optional Linux Feature stages the standalone `codex-computer-use-x11` MCP plugin into Codex Desktop Linux. It stays disabled by default and is enabled only when listed in `linux-features/features.json`.
 
 ## Enable
 
@@ -39,19 +35,21 @@ The staged plugin exposes the standalone namespaced tool surface:
 
 ## Staging modes
 
-Pinned artifact mode:
+Pinned local artifact mode:
 
 ```bash
 CODEX_X11_COMPUTER_USE_RELEASE_TARBALL=/path/to/codex-computer-use-x11-v<VERSION>-x86_64-unknown-linux-gnu.tar.gz
 CODEX_X11_COMPUTER_USE_RELEASE_SHA256=<expected-sha256>
 ```
 
-Download mode:
+Default pinned release mode downloads and verifies v0.1.3 for x86_64 Linux only. Unsupported architectures fail fast unless you provide an explicit source, binary, tarball, or download override:
 
 ```bash
-CODEX_X11_COMPUTER_USE_DOWNLOAD_URL=https://github.com/AlekseiSeleznev/codex-computer-use-x11/releases/download/v<VERSION>/codex-computer-use-x11-v<VERSION>-x86_64-unknown-linux-gnu.tar.gz
-CODEX_X11_COMPUTER_USE_RELEASE_SHA256=<expected-sha256>
+CODEX_X11_COMPUTER_USE_DOWNLOAD_URL=https://github.com/AlekseiSeleznev/codex-computer-use-x11/releases/download/v0.1.3/codex-computer-use-x11-v0.1.3-x86_64-unknown-linux-gnu.tar.gz
+CODEX_X11_COMPUTER_USE_RELEASE_SHA256=067244a16f9e812eb369af42149658c8cf138b13057445bb9d10318f29b0c26b
 ```
+
+Those values are built into `stage.sh`; set the variables only to override the pinned artifact.
 
 Local source mode:
 
@@ -67,9 +65,9 @@ CODEX_X11_COMPUTER_USE_BINARY=/path/to/codex-computer-use-x11
 
 ## Upstream alignment
 
-This scaffold wires the separate `codex-computer-use-x11` plugin as an opt-in Linux Feature. It does not move X11/EWMH behavior into the core Computer Use backend and does not replace the bundled `computer-use` plugin.
+This feature wires the separate `codex-computer-use-x11` plugin as an opt-in Linux Feature. It does not move X11/EWMH behavior into the core Computer Use backend and does not replace the bundled `computer-use` plugin.
 
-`agent-sh/computer-use-linux` selectable backend/flavor integration is a separate future investigation. If that route proves a better fit, handle it in a separate change or pull request; no backend/flavor experiment may require enabling this feature by default or modifying core Computer Use behavior in this scaffold.
+`agent-sh/computer-use-linux` selectable backend/flavor integration is a separate future investigation. If that route proves a better fit, handle it in a separate change or pull request; no backend/flavor experiment may require enabling this feature by default or modifying core Computer Use behavior in this feature.
 
 ## Non-goals
 
