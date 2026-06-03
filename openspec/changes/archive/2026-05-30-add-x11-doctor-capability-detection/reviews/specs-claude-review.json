@@ -1,0 +1,65 @@
+{
+  "budgetLimitUsd": null,
+  "change": "add-x11-doctor-capability-detection",
+  "command": {
+    "inputMode": "bundle",
+    "outputFormat": "json",
+    "permissionMode": "dontAsk",
+    "tools": "none"
+  },
+  "cost": {
+    "duration_ms": 86738,
+    "num_turns": 2,
+    "total_cost_usd": 0.21671615000000005
+  },
+  "effortConfigured": "medium",
+  "effortEffective": "medium",
+  "fallbackModel": "claude-sonnet-4-6",
+  "modelConfigured": "claude-sonnet-4-6",
+  "mustFix": [],
+  "omittedContext": [],
+  "questions": [],
+  "reportPath": "openspec/changes/add-x11-doctor-capability-detection/reviews/specs-claude-review.json",
+  "reviewedAt": "2026-05-30T15:35:56Z",
+  "reviewedFiles": [
+    {
+      "bytes": 13895,
+      "path": "openspec/changes/add-x11-doctor-capability-detection/proposal.md",
+      "reason": "dependency",
+      "sha256": "0e16cea617f1738530061de57c1e813bb70db8984cf54a20026718d9490ac321"
+    },
+    {
+      "bytes": 18666,
+      "path": "openspec/changes/add-x11-doctor-capability-detection/specs/doctor-cli/spec.md",
+      "reason": "delta-spec",
+      "sha256": "993700426f900e46e652ca1ff71bd0a988432f5a03fb3847f00662fec19dba42"
+    },
+    {
+      "bytes": 3371,
+      "path": "openspec/specs/doctor-cli/spec.md",
+      "reason": "canonical-spec",
+      "sha256": "61fbba6ef63d458cbd12566720ebeeafccd9432d5f773bc5798a7c787f93c6e2"
+    },
+    {
+      "bytes": 8914,
+      "path": "openspec/changes/add-x11-doctor-capability-detection/specs/x11-integration-contract/spec.md",
+      "reason": "delta-spec",
+      "sha256": "c75b613d79217c334ed00bf0d4962a760af0b68b11815ca5ad9e933a0a6daf86"
+    },
+    {
+      "bytes": 4215,
+      "path": "openspec/specs/x11-integration-contract/spec.md",
+      "reason": "canonical-spec",
+      "sha256": "2a02b7447836fb65d7e3de99162fc8c61581eb4b9197e81b62fddb1286d02174"
+    }
+  ],
+  "schemaVersion": 1,
+  "shouldFix": [
+    "tasks.md MUST include an explicit follow-up task or archive note to resolve the Purpose: TBD fields in both canonical specs (openspec/specs/doctor-cli/spec.md and openspec/specs/x11-integration-contract/spec.md), as committed to in the doctor-cli delta Claude Specs Review Disposition; this obligation must be stated as a concrete named task rather than left in prose where it can be dropped across artifact stages.",
+    "The delta constraint that capabilities.planned may be empty only when 'all previously planned capabilities have become implemented or moved into named capability facts' references previously planned capabilities without naming them; the tasks or design artifact must enumerate which specific capabilities were previously planned under this change (i.e., the X11/EWMH detection capabilities introduced here) so that implementation cannot silently empty the array for unrelated reasons."
+  ],
+  "stage": "specs",
+  "summary": "Both spec deltas are internally consistent, fully address all four proposal shouldFix obligations, satisfy the proposal acceptance checklist, introduce no secret leakage risk, and correctly gate targeted-input readiness and portal detection. Two shouldFix items must land in the tasks artifact to prevent deferred obligations from being silently dropped.",
+  "verdict": "pass",
+  "warnings": []
+}

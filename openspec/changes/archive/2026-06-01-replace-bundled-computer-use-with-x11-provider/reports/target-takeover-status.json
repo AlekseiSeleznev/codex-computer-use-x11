@@ -1,0 +1,13 @@
+{
+  "changed_files": [],
+  "details": [],
+  "manifest_present": true,
+  "marker_version": "codex-computer-use-x11-provider-takeover:v1",
+  "mode": "takeover",
+  "operation": "status",
+  "provider": "x11",
+  "restart_hint": "restart Codex Desktop after rebuilding/reinstalling the target so Computer Use settings reload the X11 provider takeover patch.",
+  "state": "applied",
+  "target": "/home/as/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/AI_PROJECTS/codex-desktop-linux-full",
+  "target_commit": "09d27305e5122b584b4d9c5a30b4a9ab6bffc6f9"
+}

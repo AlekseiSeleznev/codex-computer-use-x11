@@ -1,0 +1,61 @@
+{
+  "change": "bootstrap-codex-computer-use-x11",
+  "command": {
+    "inputMode": "bundle",
+    "outputFormat": "json",
+    "permissionMode": "dontAsk",
+    "tools": "none"
+  },
+  "cost": {
+    "duration_ms": 54098,
+    "num_turns": 2,
+    "total_cost_usd": 0.13717040000000003
+  },
+  "effortConfigured": "medium",
+  "effortEffective": "medium",
+  "fallbackModel": "claude-sonnet-4-6",
+  "modelConfigured": "claude-sonnet-4-6",
+  "mustFix": [],
+  "omittedContext": [],
+  "questions": [
+    "doctor-cli/spec.md — capabilities.planned is required to be non-empty but no constraint is placed on acceptable string values. Should the spec enumerate at least one required planned capability name (e.g., `x11-ewmh-windows`) to anchor future testing, or is leaving the names fully design-owned intentional?",
+    "x11-integration-contract/spec.md — The sidecar/report for X11-only diagnostics is specified as the default container for provenance fields, but no spec defines the sidecar's shape, location (e.g., a parallel struct, a map, a log line), or naming. Is the sidecar shape intentionally deferred to design, or should a minimal structural contract be added to this spec?"
+  ],
+  "reportPath": "openspec/changes/bootstrap-codex-computer-use-x11/reviews/specs-claude-review.json",
+  "reviewedAt": "2026-05-30T13:01:38Z",
+  "reviewedFiles": [
+    {
+      "bytes": 11565,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/proposal.md",
+      "reason": "dependency",
+      "sha256": "4f8a29f4f393014e4379d495e385fe249ae709d43115cbc057352b3d41bcc9a5"
+    },
+    {
+      "bytes": 3240,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/specs/doctor-cli/spec.md",
+      "reason": "delta-spec",
+      "sha256": "a109c1eb1902c024e83387f6b5d7212f302feab2bef8aeb32e525c9707832597"
+    },
+    {
+      "bytes": 3271,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/specs/project-bootstrap/spec.md",
+      "reason": "delta-spec",
+      "sha256": "2890c419c77ea7cc2faad4d8009c10a645467b59e2bc1ea349020afd078d6c10"
+    },
+    {
+      "bytes": 4070,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/specs/x11-integration-contract/spec.md",
+      "reason": "delta-spec",
+      "sha256": "91737786de64712f751c13c1aa9cffcaa34e15a23e778b14aeac38d28cce2cf0"
+    }
+  ],
+  "schemaVersion": 1,
+  "shouldFix": [
+    "doctor-cli/spec.md: The non-invasive requirement and readiness-shape requirement specify stderr behavior and exit code only for the success path. A scenario covering exit code and stderr on failure (e.g., JSON serialization error) would make the spec complete and prevent ambiguous implementation choices at design time.",
+    "project-bootstrap/spec.md: The root Rust package requirement names edition 2021 but no minimum Rust toolchain version (MSRV) is stated anywhere in proposal or specs. Without an MSRV, CI environments may silently use incompatible toolchains. Add an MSRV requirement or explicitly defer it to design with a note."
+  ],
+  "stage": "specs",
+  "summary": "All three specs are internally consistent with the proposal and with each other. Core proposal requirements map to spec requirements without gaps or contradictions. No secret values are present; the development-machine default path is appropriately scoped as a documentation example, not a hard-coded requirement. Unsupported assumptions are not found — research-refresh evidence in the proposal supports every upstream WindowInfo field reference, registry order claim, and backend identity used in the specs. Two minor gaps are worth closing before design: failure-path behavior for the doctor command is unspecified, and no minimum Rust toolchain version is stated.",
+  "verdict": "pass",
+  "warnings": []
+}

@@ -1,0 +1,86 @@
+{
+  "budgetLimitUsd": null,
+  "change": "bootstrap-codex-computer-use-x11",
+  "command": {
+    "inputMode": "bundle",
+    "outputFormat": "json",
+    "permissionMode": "dontAsk",
+    "tools": "none"
+  },
+  "cost": {
+    "duration_ms": 43559,
+    "num_turns": 2,
+    "total_cost_usd": 0.45040575
+  },
+  "effortConfigured": "high",
+  "effortEffective": "high",
+  "fallbackModel": "claude-sonnet-4-6",
+  "modelConfigured": "claude-opus-4-8",
+  "mustFix": [],
+  "omittedContext": [],
+  "questions": [
+    "Are the durable ADR body files (adr/0001/0003/0005/0006/0007-*.md) genuinely absent from the repository, or merely not included in this review bundle? If present, the adr.md claim that no ADR body was available to evaluate is inaccurate and should be corrected.",
+    "Has a follow-up maintenance change actually been opened to reconcile the missing in-force ADR bodies, or is the recommendation currently only documented in adr.md?"
+  ],
+  "reportPath": "openspec/changes/bootstrap-codex-computer-use-x11/reviews/adr-claude-review.json",
+  "reviewedAt": "2026-05-30T13:47:51Z",
+  "reviewedFiles": [
+    {
+      "bytes": 9757,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/grill.md",
+      "reason": "dependency",
+      "sha256": "7a7f347af5bbf80988cb9521ce1218426725890beba00c820a52c78143ba4ec5"
+    },
+    {
+      "bytes": 14174,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/design.md",
+      "reason": "dependency",
+      "sha256": "e9172befd202842f383160bdd41e069ca69b849d72fa5140681b2659468e52b7"
+    },
+    {
+      "bytes": 10451,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/design-review.md",
+      "reason": "dependency",
+      "sha256": "a06766e93e6844e53481f0d7830bc349baa6e0c87eb17eb249f426fbefda2034"
+    },
+    {
+      "bytes": 7572,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/adr.md",
+      "reason": "artifact",
+      "sha256": "7b1155a4436a9ca157b2dc897f6d487fb9eb2680bfe9a0ccf6dc17c2a87925f8"
+    },
+    {
+      "bytes": 6838,
+      "path": "CONSTITUTION.md",
+      "reason": "project-context",
+      "sha256": "7db0056f4164ead479480bf4b5f78a6c35f3679356323ac47567773449fdfcf4"
+    },
+    {
+      "bytes": 2409,
+      "path": "CONTEXT.md",
+      "reason": "project-context",
+      "sha256": "3735f0a1a5ece77c60c374213f852c0404783239263402a9bd059349bab8acf2"
+    },
+    {
+      "bytes": 7421,
+      "path": "ARCHITECTURE.md",
+      "reason": "project-context",
+      "sha256": "29620d4bc2539e2428b33aa43b11f265e19ee0b0d7c78ca8493f735d411d99df"
+    },
+    {
+      "bytes": 3405,
+      "path": "adr/README.md",
+      "reason": "project-context",
+      "sha256": "579a0c40c0d78ba3a3872dc312337e9459f631564efd9193611faba8a54a51ca"
+    }
+  ],
+  "schemaVersion": 1,
+  "shouldFix": [
+    "The referenced in-force ADR body files (adr/0001/0003/0005/0006/0007-*.md) are missing from the checkout; the adr.md review of in-force constraints rests on ARCHITECTURE.md / adr/README.md summaries rather than the actual decision bodies. Open the recommended separate maintenance change to restore or reconcile these durable ADR bodies so future ADR gates can review real decision text.",
+    "Consider making the missing-ADR-body gap a tracked action item (issue/change) rather than only a prose note inside adr.md, so it is not lost when this change is archived."
+  ],
+  "stage": "adr",
+  "summary": "The adr.md is internally consistent with grill/design/design-review and correctly concludes no durable ADR is needed for the reversible, constitution-mandated stage-01 bootstrap. It satisfies all required adr/README.md review elements and leaks no secrets. The notable issue is an acknowledged repository source-of-truth gap: the in-force ADR body files (0001/0003/0005/0006/0007) referenced by ARCHITECTURE.md and adr/README.md are absent, so the durability review relied on summaries only. The artifact handles this gap correctly for this change's scope but it warrants explicit follow-up.",
+  "verdict": "warn",
+  "warnings": []
+}

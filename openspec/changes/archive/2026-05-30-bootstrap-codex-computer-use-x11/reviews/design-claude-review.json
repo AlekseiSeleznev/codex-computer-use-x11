@@ -1,0 +1,108 @@
+{
+  "budgetLimitUsd": null,
+  "change": "bootstrap-codex-computer-use-x11",
+  "command": {
+    "inputMode": "bundle",
+    "outputFormat": "json",
+    "permissionMode": "dontAsk",
+    "tools": "none"
+  },
+  "cost": {
+    "duration_ms": 146649,
+    "num_turns": 2,
+    "total_cost_usd": 0.32541814999999996
+  },
+  "effortConfigured": "high",
+  "effortEffective": "high",
+  "fallbackModel": "claude-sonnet-4-6",
+  "modelConfigured": "claude-sonnet-4-6",
+  "mustFix": [],
+  "omittedContext": [
+    {
+      "path": "/home/as/ai-projects/codex-computer-use-x11/docs/lifecycle.md",
+      "reason": "missing"
+    },
+    {
+      "path": "/home/as/ai-projects/codex-computer-use-x11/docs/update-safety.md",
+      "reason": "missing"
+    }
+  ],
+  "questions": [
+    "Decision 3 specifies compact JSON followed by one newline to stdout. Should the integration tests in tests/doctor_cli.rs assert the trailing newline explicitly, or is the newline an implementation detail intentionally excluded from test assertions (i.e., tests parse JSON and ignore trailing whitespace)?",
+    "The design requires README to state no formal MSRV is promised yet beyond stable Rust 2021 support. Is this README content tracked as a required verification step for apply alongside the cargo/make commands in Migration Plan item 5, or is it advisory documentation guidance that apply may satisfy without a formal check?"
+  ],
+  "reportPath": "openspec/changes/bootstrap-codex-computer-use-x11/reviews/design-claude-review.json",
+  "reviewedAt": "2026-05-30T13:33:21Z",
+  "reviewedFiles": [
+    {
+      "bytes": 11565,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/proposal.md",
+      "reason": "dependency",
+      "sha256": "4f8a29f4f393014e4379d495e385fe249ae709d43115cbc057352b3d41bcc9a5"
+    },
+    {
+      "bytes": 9757,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/grill.md",
+      "reason": "dependency",
+      "sha256": "7a7f347af5bbf80988cb9521ce1218426725890beba00c820a52c78143ba4ec5"
+    },
+    {
+      "bytes": 13566,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/design.md",
+      "reason": "artifact",
+      "sha256": "5635e4ff34619112f680e3388b2504ef6b9fda8af8523eb8e910fab26b92d984"
+    },
+    {
+      "bytes": 3240,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/specs/doctor-cli/spec.md",
+      "reason": "delta-spec",
+      "sha256": "a109c1eb1902c024e83387f6b5d7212f302feab2bef8aeb32e525c9707832597"
+    },
+    {
+      "bytes": 3271,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/specs/project-bootstrap/spec.md",
+      "reason": "delta-spec",
+      "sha256": "2890c419c77ea7cc2faad4d8009c10a645467b59e2bc1ea349020afd078d6c10"
+    },
+    {
+      "bytes": 4070,
+      "path": "openspec/changes/bootstrap-codex-computer-use-x11/specs/x11-integration-contract/spec.md",
+      "reason": "delta-spec",
+      "sha256": "91737786de64712f751c13c1aa9cffcaa34e15a23e778b14aeac38d28cce2cf0"
+    },
+    {
+      "bytes": 6838,
+      "path": "CONSTITUTION.md",
+      "reason": "project-context",
+      "sha256": "7db0056f4164ead479480bf4b5f78a6c35f3679356323ac47567773449fdfcf4"
+    },
+    {
+      "bytes": 2409,
+      "path": "CONTEXT.md",
+      "reason": "project-context",
+      "sha256": "3735f0a1a5ece77c60c374213f852c0404783239263402a9bd059349bab8acf2"
+    },
+    {
+      "bytes": 7421,
+      "path": "ARCHITECTURE.md",
+      "reason": "project-context",
+      "sha256": "29620d4bc2539e2428b33aa43b11f265e19ee0b0d7c78ca8493f735d411d99df"
+    },
+    {
+      "bytes": 3405,
+      "path": "adr/README.md",
+      "reason": "project-context",
+      "sha256": "579a0c40c0d78ba3a3872dc312337e9459f631564efd9193611faba8a54a51ca"
+    }
+  ],
+  "schemaVersion": 1,
+  "shouldFix": [
+    "Check name commitment is implicit: the design names three specific bootstrap check objects (bootstrap-project, backend-identity, no-live-x11-probes) and states tests must assert no-live-x11-probes is present and ok=true, but does not explicitly declare these names as committed identifiers for this stage. The grill recorded that exact future check names remain design-owned, yet here the design is pinning them. Apply could rename them without knowing they are asserted. Decision 4 or the test strategy in Decision 6 should state these three names are stable for stage-01 apply and that future live-probe work must update no-live-x11-probes deliberately rather than silently.",
+    "File layout omits inline unit test placement: the root `tests/` directory lists only `tests/doctor_cli.rs` (integration tests), but TDD step 1 calls for a unit test for parse_x11_window_id inside src/x11_id.rs as an inline #[cfg(test)] module. The layout does not show this, which could lead apply to place the normalizer unit tests under `tests/` as a separate integration test file rather than inline, breaking the RED/GREEN slice ordering. The file layout or TDD step 1 should clarify that x11_id unit tests live inline in src/x11_id.rs.",
+    "WindowObservationMeta doc requirement is only in the migration plan: the requirement that docs/integration-contract.md must include or link the WindowObservationMeta sketch and record the sidecar/report default is recorded in Migration Plan item 5, but not as an explicit acceptance criterion that the test-plan or tasks phase can verify. Since no automated test covers doc content, apply has no hard gate forcing this requirement to be checked. The design should flag this as a required manual verification step with the same weight as the cargo test and make commands in Migration Plan item 5, or carry it forward explicitly to the test-plan artifact."
+  ],
+  "stage": "design",
+  "summary": "The design is internally consistent with the proposal, grill resolutions, and all three specs (doctor-cli, project-bootstrap, x11-integration-contract). All spec-required fields, behavioral contracts, and grill-resolved decisions are addressed. No secrets or secret values appear in any artifact. No unsupported assumptions found. Risks and deferred decisions are properly bounded. The design introduces three specific bootstrap check names that tests will pin, which is additive and permissible, but the naming commitment is implicit rather than stated. Two minor layout and verification-tracking gaps are noted as should-fix items.",
+  "verdict": "pass",
+  "warnings": []
+}
